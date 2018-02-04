@@ -8,7 +8,7 @@ creds = os.path.expanduser('~/.aws/credentials')
 creds_bak = os.path.expanduser('~/.aws/credentials.python.backup')
 
 # move backup credentials file if it exists
-if os.path.isfile(creds_bak):
+if os.path.exists(creds_bak):
     move(creds_bak, creds)
 
 # get username
