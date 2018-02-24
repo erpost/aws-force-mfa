@@ -55,9 +55,8 @@ except ClientError as ce:
 move(creds, creds_bak)
 
 # write new credentials file
-credfile = open(creds, 'w')
-credfile.write('[default]\n' +
+with open(creds, 'w') as credfile:
+    credfile.write('[default]\n' +
                'aws_access_key_id = {}\n'.format(sts_response['Credentials']['AccessKeyId']) +
                'aws_secret_access_key = {}\n'.format(sts_response['Credentials']['SecretAccessKey']) +
                'aws_session_token = {}'.format(sts_response['Credentials']['SessionToken']))
-credfile.close()
