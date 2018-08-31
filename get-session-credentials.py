@@ -4,6 +4,7 @@ from shutil import move
 from botocore.exceptions import ClientError
 
 
+# set variables
 creds = os.path.expanduser('~/.aws/credentials')
 creds_bak = os.path.expanduser('~/.aws/credentials.python.backup')
 
